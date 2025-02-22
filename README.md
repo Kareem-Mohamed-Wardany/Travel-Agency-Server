@@ -1,32 +1,29 @@
-# Ojewelry Server
+# Travel Agency Server
 
-This is the backend server for the Ojewelry e-commerce platform, responsible for handling business logic, database interactions, and API endpoints. Built with **Node.js**, **Express.js**, and **MongoDB**, it provides a secure and efficient backend for managing products, orders, and users.
+This is the backend server for the Travel Agency platform, responsible for handling business logic, database interactions, and API endpoints. Built with **Node.js**, **Express.js**, and **MongoDB**, it provides a secure and efficient backend for managing trips, reservations, and users.
 
 ## Features
 
 ### Customer Features
 
-- 🛍️ View and fetch product details via API.
-- 🛒 Add products to the cart and manage cart contents.
-- 📦 Store and manage shipping addresses.
-- 💳 Process payments securely via **Paymob** integration.
-- ⭐ Customers can leave reviews and ratings for products.
+- 🌍 View and fetch trip details via API.
+- 🎫 Book trips and manage reservations.
+- ❌ Cancel trip reservations.
+- 📄 View all personal reservations.
 
 ### Admin Features
 
-- ➕ Add new products with images and descriptions.
-- ✏️ Edit or delete existing product details.
-- 💰 Apply sales and discounts to products.
-- 🖼️ Manage Hero images and product galleries.
+- ➕ Add new trips with details and images.
+- ✏️ Edit or delete existing trips.
+- 📅 View all reservations for each trip.
 - 🔒 Secure authentication and authorization for admins.
 
 ## 🛠 Tech Stack
 
 - **Node.js** – Runtime environment.
 - **Express.js** – Web framework for handling API requests.
-- **MongoDB** – NoSQL database for storing products, users, and orders.
+- **MongoDB** – NoSQL database for storing trips, users, and reservations.
 - **Mongoose** – ODM for interacting with MongoDB.
-- **Paymob API** – Payment gateway integration.
 - **JWT** – Secure authentication and authorization.
 
 ## 🚀 Installation
@@ -34,13 +31,13 @@ This is the backend server for the Ojewelry e-commerce platform, responsible for
 1. **Clone the repository:**
 
    ```sh
-   git clone https://github.com/Kareem-Mohamed-Wardany/Ojewelry-server.git
+   git clone https://github.com/Kareem-Mohamed-Wardany/Travel-Agency-Server.git
    ```
 
 2. **Navigate to the project folder:**
 
    ```sh
-   cd Ojewelry-server
+   cd Travel-Agency-Server
    ```
 
 3. **Install dependencies:**
@@ -60,10 +57,6 @@ This is the backend server for the Ojewelry e-commerce platform, responsible for
     CLOUD_NAME = Cloudinary Cloud Name
     API_KEY = Cloudinary_API_KEY
     API_SECRET = Cloudinary_API_SECRET
-    Paymob_API_KEY= your_paymob_key
-    BASE_URL = 'https://accept.paymobsolutions.com/api'
-    integration_id = PayMob_integration_id
-
    ```
 
 5. **Run the server:**
@@ -81,25 +74,12 @@ This is the backend server for the Ojewelry e-commerce platform, responsible for
 
    ### **Admin Routes** (Protected)
 
-   - `/api/v1/admin/products` → Admins manage products.
-   - `/api/v1/admin/orders` → Admins manage orders.
+   - `/api/v1/admin/trips` → Admins manage trips (Add, Edit, Delete).
 
-   ### **Shop Routes**
+   ### **User Routes**
 
-   - `/api/v1/shop/products` → Fetch products for customers.
-   - `/api/v1/shop/cart` → Manage shopping cart (requires authentication for users/admins).
-   - `/api/v1/shop/address` → Manage shipping addresses (authenticated users/admins).
-   - `/api/v1/shop/order` → Place orders (authenticated users/admins).
-   - `/api/v1/shop/search` → Search for products.
-   - `/api/v1/shop/review` → Add product reviews.
-
-   ### **Common Routes**
-
-   - `/api/v1/common/hero` → Manage hero images.
-
-   ### **Payments**
-
-   - `/api/v1/payments` → Handles payment processing.
+   - `/api/v1/user/trips` → Fetch available trips.
+   - `/api/v1/user/reservations` → manage reservations.
 
 ## 🌍 Deployment
 
